@@ -1,0 +1,107 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: slategrey;
+    background-color: rgb(0, 0, 0);
+}
+.container{
+    border: 3px solid black;
+    width: 30vh;
+    height: 30vh;
+    /* position: relative; */
+}
+.clock{
+    height: 100%;
+    /* background-color: #2f363e; */
+    background-color: rgb(200,200,200);
+    border-radius: 20%;
+    box-shadow: 10px 50px 70px rgba(245,245,245,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.clock::after{
+    content: '';
+    position: absolute;
+    width: 0.3em;
+    height: 0.3em;
+    border: 3px solid black;
+    border-radius: 50%;
+    z-index: 10000;
+    margin: 3px;
+}
+.clock span{
+    position: absolute;
+    inset: 0.5em;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--i)));
+    
+}
+span b{
+    font-size: 1.2em;
+    opacity: 0.60;
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--i)));
+}
+/* .clock-hand-1{
+    position: absolute;
+    background-color: aqua;
+    width: 50px;
+    height: 50px;
+    border-radius: 50% ;
+} */
+
+.clock-hand-1{
+    transform: scaleY(-1);
+    transform: rotate(270deg);
+}
+.clock-hand-1 > i{
+    position: absolute;
+    width: 4px;
+    height: 2em;
+    border-radius: 30%;
+    background-color: darkmagenta;
+    z-index: 3;
+    margin-top: 10px;
+}
+.clock-hand-2{
+    transform-origin: bottom;
+    /* transform: rotate(90deg); */
+}
+.clock-hand-2 > i{
+    position: absolute;
+    width: 5px;
+    height: 25%;
+    /* background-color: yellowgreen; */
+    background-color: black;
+    transform-origin: 0% -17%;
+    rotate: 200deg;
+    z-index: 2;
+    margin-top: 10px;
+    
+}
+
+.clock-hand-3 > i{
+    position: absolute;
+    width: 3px;
+    height: 30%;
+    z-index: 1;
+    background-color: green;
+    margin-top: 10px;
+    transform-origin: 0 -15%;
+    rotate: 90deg;
+
+
+}
+i {
+    transform-origin: bottom;
+    border-radius: 25%;
+}
