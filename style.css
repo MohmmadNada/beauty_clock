@@ -1,54 +1,61 @@
+:root {
+  --pale-grey: #c0c0c0;
+  --white: #ffffff;
+  --light-white: #b4b4b4;
+  --black: #000000;
+  --red: #f74317;
+  --central-two-spans: 5 / 7;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ac9797;
+  background-color: var(--pale-grey);
 }
 
 .container {
   height: 50vh;
   width: 50vh;
-  /* border: 2px solid #ffffff; */
-  background-color: #ffffff;
+  background-color: var(--white);
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  color: #8e8e8e;
+  color: var(--light-white);
   font-size: 2em;
   padding: 0.5em;
   border-radius: 20%;
-  position: relative;
+  align-items: center;
 }
 
 .number-12 {
-  grid-column: 5 / 7;
+  grid-column: var(--central-two-spans);
   align-self: top;
   justify-self: center;
 }
 
 .number-3 {
   grid-column: 10 / 11;
-  grid-row: 5 / 7;
-  align-self: center;
+  grid-row: var(--central-two-spans);
   justify-self: end;
 }
 
 .number-9 {
-  grid-column: 1 /2;
-  grid-row: 5 / 7;
-  align-self: center;
+  grid-column: 1 / 2;
+  grid-row: var(--central-two-spans);
   justify-self: start;
 }
 
 .number-6 {
-  grid-column: 5 / 7;
+  grid-column: var(--central-two-spans);
   grid-row: 10 / 11;
   justify-self: center;
   align-self: end;
@@ -56,48 +63,40 @@ body {
 
 .container::after {
   content: "";
-  position: absolute;
   width: 0.3em;
   height: 0.3em;
-  border: 3px solid white;
-  background-color: #f74317;
+  border: 3px solid var(--white);
+  background-color: var(--red);
   border-radius: 50%;
   z-index: 10000;
-  grid-column: 5 / 7;
-  grid-row: 5 / 7;
-  align-self: center;
+  grid-column: var(--central-two-spans);
+  grid-row: var(--central-two-spans);
   justify-self: center;
 }
 
 #hours {
   height: 5%;
   border-radius: 20%;
-  background-color: #151515;
+  background-color: var(--black);
   grid-column: 6/8;
-  grid-row: 5/7;
-  align-self: center;
-  transform: rotate(350deg);
+  grid-row: var(--central-two-spans);
   transform-origin: left;
 }
 
 #minutes {
-    height: 5%;
-    border-radius: 20%;
-    background-color: #151515;
-    grid-column: 6/10;
-    grid-row: 5/7;
-    transform: rotate(50deg);
-    align-self: center;
-    transform-origin: left;
+  height: 5%;
+  border-radius: 20%;
+  background-color: var(--black);
+  grid-column: 6/10;
+  grid-row: var(--central-two-spans);
+  transform-origin: left;
 }
 
 #seconds {
-    height: 5%;
-    border-radius: 20%;
-    background-color: #bb444f;
-    grid-column: 6/11;
-    grid-row: 5/7;
-    align-self: center;
-    transform-origin: left;
-  transform: rotate(30deg);
+  height: 5%;
+  border-radius: 20%;
+  background-color: var(--red);
+  grid-column: 6/11;
+  grid-row: var(--central-two-spans);
+  transform-origin: left;
 }
